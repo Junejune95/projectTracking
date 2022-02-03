@@ -5,16 +5,16 @@
     </button>
 
     <mat-nav-list>
-      <mat-list-item>
+      <mat-list-item [routerLink]="'home'" routerLinkActive="active">
         <mat-icon mat-list-icon color="primary">home</mat-icon>
         <h4 mat-line *ngIf="isExpanded">Home</h4>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item [routerLink]="'project'" routerLinkActive="active">
         <mat-icon mat-list-icon color="primary">folder_shared</mat-icon>
         <h4 mat-line *ngIf="isExpanded">Project</h4>
       </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon color="primary">task</mat-icon>
+      <mat-list-item [routerLink]="'task'" routerLinkActive="active">
+        <mat-icon mat-list-icon color="primary" >task</mat-icon>
         <h4 mat-line *ngIf="isExpanded">Task</h4>
       </mat-list-item>
       <mat-list-item>
@@ -52,13 +52,9 @@
 
     <!-- </mat-toolbar-row> -->
   </mat-toolbar>
-  <div class="container mat-drawer-container">
 
-    <!-- <hello name="{{ name }}"></hello> -->
-    <p>
-      Start editing to see some magic happen :)
-    </p>
-    <button mat-raised-button color="accent">Get Started</button>
+  <div class="container mat-drawer-container">
+    <ng-content></ng-content>
 
   </div>
 

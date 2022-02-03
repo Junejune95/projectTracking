@@ -2,7 +2,7 @@
   height: 100%;
 }
 
-.sidenav {
+/* .sidenav {
   width: 200px;
 }
 
@@ -14,8 +14,12 @@
   position: sticky;
   top: 0;
   z-index: 1;
-}
+} */
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.active {
+  background-color: #f4defd;
 }
