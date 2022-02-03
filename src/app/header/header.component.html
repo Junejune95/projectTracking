@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Dora</span>
+    <span class="spacer"></span>
+    <section class="sort-area">
+      <mat-form-field class="drop-down">
+        <mat-label>Choose an theme</mat-label>
+        <mat-select (selectionChange)="setTheme($event)">
+          <mat-option value="dark">Dark</mat-option>
+          <mat-option value="light">Light</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="accent">Sort</button>
+    </section>
+  </mat-toolbar-row>
+</mat-toolbar>
