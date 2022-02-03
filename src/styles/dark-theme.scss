@@ -1,7 +1,7 @@
 @use "~@angular/material/theming" as material;
 @use "./common.scss";
 
-$workshop-primary: material.mat-palette(material.$mat-cyan, 700, 400, 900);
+$workshop-primary: material.mat-palette(material.$mat-purple, A100, A200);
 $workshop-accent: material.mat-palette(material.$mat-pink, A200, A100);
 
 $workshop-theme: material.mat-dark-theme(

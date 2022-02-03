@@ -1,53 +1,65 @@
 <mat-drawer-container class="sidenav__container mat-typography" autosize>
-  <mat-drawer #drawer mode="side" disableClose="true" opened="true">
-    <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true" color="accent">
+    <button mat-mini-fab (click)="isExpanded = !isExpanded" style="margin: 10px;">
       <mat-icon aria-label="Menu">menu</mat-icon>
     </button>
 
     <mat-nav-list>
       <mat-list-item>
         <mat-icon mat-list-icon color="primary">home</mat-icon>
-        <h4 mat-line *ngIf="isExpanded">Management A</h4>
+        <h4 mat-line *ngIf="isExpanded">Home</h4>
       </mat-list-item>
       <mat-list-item>
         <mat-icon mat-list-icon color="primary">folder_shared</mat-icon>
-        <h4 mat-line *ngIf="isExpanded">Management B</h4>
+        <h4 mat-line *ngIf="isExpanded">Project</h4>
       </mat-list-item>
       <mat-list-item>
         <mat-icon mat-list-icon color="primary">task</mat-icon>
-        <h4 mat-line *ngIf="isExpanded">Management C</h4>
+        <h4 mat-line *ngIf="isExpanded">Task</h4>
       </mat-list-item>
       <mat-list-item>
         <mat-icon mat-list-icon color="primary">settings</mat-icon>
-        <h4 mat-line *ngIf="isExpanded">Management X</h4>
+        <h4 mat-line *ngIf="isExpanded">Setting</h4>
       </mat-list-item>
     </mat-nav-list>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>Dora</span>
-        <span class="spacer"></span>
-        <section class="sort-area">
-          <mat-form-field class="drop-down">
-            <mat-label>Choose an theme</mat-label>
-            <mat-select (selectionChange)="setTheme($event)">
-              <mat-option value="dark">Dark</mat-option>
-              <mat-option value="light">Light</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <button mat-raised-button color="accent">Sort</button>
-        </section>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <div class="container mat-drawer-container">
-      <!-- <hello name="{{ name }}"></hello> -->
-      <p>
-        Start editing to see some magic happen :)
-      </p>
-      <button mat-raised-button color="accent">Get Started</button>
+  <mat-toolbar color="primary">
+    <!-- <mat-toolbar-row> -->
+    <span>Dora</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Change Theme Menu">
+      <mat-icon>palette</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="setTheme('light-theme')">
+        <mat-icon color="accent">
+          <ng-container *ngIf="currentTheme == 'light-theme'; else noRadio">radio_button_checked</ng-container>
+        </mat-icon>
+        <span>Light</span>
+      </button>
+      <button mat-menu-item (click)="setTheme('dark-theme')">
+        <mat-icon color="accent">
+          <ng-container *ngIf="currentTheme == 'dark-theme'; else noRadio">radio_button_checked</ng-container>
+        </mat-icon>
+        <span>Dark</span>
+      </button>
+    </mat-menu>
+    <ng-template #noRadio>
+      radio_button_unchecked
+    </ng-template>
 
-    </div>
+
+    <!-- </mat-toolbar-row> -->
+  </mat-toolbar>
+  <div class="container mat-drawer-container">
+
+    <!-- <hello name="{{ name }}"></hello> -->
+    <p>
+      Start editing to see some magic happen :)
+    </p>
+    <button mat-raised-button color="accent">Get Started</button>
+
   </div>
+
 </mat-drawer-container>

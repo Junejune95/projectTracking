@@ -28,8 +28,9 @@ $workshop-info: material.mat-palette(material.$mat-blue);
     @include material.mat-sidenav-theme($workshop-theme);
     @include material.mat-icon-theme($workshop-theme);
     @include material.mat-toolbar-theme($workshop-theme);
-    // @include material.mat-button-theme($workshop-theme);
-    // @include material.mat-card-theme($workshop-theme);
+    @include material.mat-button-theme($workshop-theme);
+    @include material.mat-card-theme($workshop-theme);
+    @include material.mat-menu-theme($workshop-theme);
     // @include material.mat-form-theme($workshop-theme);
 
     // @include banner.app-banner-theme($workshop-theme);

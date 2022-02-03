@@ -11,33 +11,35 @@ import { MatSelectChange } from '@angular/material/select';
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.css']
 })
-export class SideMenuComponent {
+export class SideMenuComponent implements OnInit {
   name = 'Angular';
-  public isExpanded:boolean=false;
+  public isExpanded: boolean = false;
   @HostBinding('class')
-  currentTheme: 'light-theme' | 'dark-theme' = 'dark-theme';
+  currentTheme: 'light-theme' | 'dark-theme' = 'light-theme';
 
-  readonly themeAnchor=this.document.getElementById('app-theme');
+  readonly themeAnchor = this.document.getElementById('app-theme');
 
   constructor(@Inject(DOCUMENT) private document: Document, private render: Renderer2) {
 
   }
-  
-  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  //   .pipe(
-  //     map(result => result.matches),
-  //     shareReplay()
-  //   );
+  ngOnInit(): void {
+    let theme = localStorage.getItem('custom-theme');
+    if (theme) this.setTheme(theme);
+    else
+      localStorage.setItem('custom-theme', this.currentTheme);
+  }
 
-  // constructor(private breakpointObserver: BreakpointObserver) {}
 
-  setTheme({ source }: MatSelectChange) {
-    if (source.value == 'light') {
-     this.render.setAttribute(this.themeAnchor,'href','/light-theme.css')
+  setTheme(source: string) {
+    if (source == 'light-theme') {
+      this.render.setAttribute(this.themeAnchor, 'href', '/light-theme.css');
+      this.currentTheme = 'light-theme';
+
     } else {
-      this.render.setAttribute(this.themeAnchor,'href','/dark-theme.css')
-
+      this.render.setAttribute(this.themeAnchor, 'href', '/dark-theme.css')
+      this.currentTheme = 'dark-theme';
     }
+    localStorage.setItem('custom-theme', this.currentTheme);
   }
 
 }
