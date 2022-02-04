@@ -8,21 +8,22 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 
 
 import { SharedMaterialModule } from './shared-material.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedMaterialModule
- 
+
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

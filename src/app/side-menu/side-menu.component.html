@@ -14,7 +14,7 @@
         <h4 mat-line *ngIf="isExpanded">Project</h4>
       </mat-list-item>
       <mat-list-item [routerLink]="'task'" routerLinkActive="active">
-        <mat-icon mat-list-icon color="primary" >task</mat-icon>
+        <mat-icon mat-list-icon color="primary">task</mat-icon>
         <h4 mat-line *ngIf="isExpanded">Task</h4>
       </mat-list-item>
       <mat-list-item>
@@ -54,7 +54,7 @@
   </mat-toolbar>
 
   <div class="container mat-drawer-container">
-    <ng-content></ng-content>
+    <router-outlet></router-outlet>
 
   </div>
 

@@ -9,6 +9,8 @@ $workshop-theme: material.mat-dark-theme(
         color: (
             primary: $workshop-primary,
             accent: $workshop-accent,
+            warn: $workshop-primary,
+            disable: $workshop-accent,
         ),
         // typography: common.$workshop-typography,
     )
@@ -18,3 +20,19 @@ $workshop-theme: common.apply-extra-colors($workshop-theme);
 
 //Generate theme
 @include common.create-theme($workshop-theme);
+
+// $my-custom-primary: material.mat-palette(material.$mat-purple, A100, A200);
+// $my-custom-accent: material.mat-palette(material.$mat-pink, A200, A100);
+// $my-custom-warn: material.mat-palette(material.$mat-lime);
+
+// // Dark theme
+// $my-custom-theme: material.mat-dark-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+
+// // Main theme defination
+
+// @include material.angular-material-theme($my-custom-theme);
+
+
+.active {
+    background-color: #ea7ffb1f;
+}
