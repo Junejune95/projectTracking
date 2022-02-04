@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
 const routes: Routes = [
   {
     path: "login",
-    component: LoginComponent
+    loadChildren: () => import('../app/module/login/login.module').then((m) => m.LoginModule)
+
   },
   {
     path: "tracking",

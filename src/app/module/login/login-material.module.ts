@@ -2,25 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSelectModule } from "@angular/material/select";
-import { MatMenuModule } from "@angular/material/menu";
-
 
 @NgModule({
-
   exports: [
     CommonModule,
     MatToolbarModule,
-    MatSelectModule,
-    MatIconModule,
+    MatInputModule,
+    MatCardModule,
     MatButtonModule,
-    MatListModule,
-    MatMenuModule,
-    MatSidenavModule,
+    FlexLayoutModule,
+    MatSidenavModule
   ]
 })
-export class SharedMaterialModule { }
+export class LoginMaterialModule { }

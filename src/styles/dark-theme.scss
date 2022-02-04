@@ -3,13 +3,14 @@
 
 $workshop-primary: material.mat-palette(material.$mat-purple, A100, A200);
 $workshop-accent: material.mat-palette(material.$mat-pink, A200, A100);
+$workshop-wran: material.mat-palette(material.$mat-amber,A200);
 
 $workshop-theme: material.mat-dark-theme(
     (
         color: (
             primary: $workshop-primary,
             accent: $workshop-accent,
-            warn: $workshop-primary,
+            warn: $workshop-wran,
             disable: $workshop-accent,
         ),
         // typography: common.$workshop-typography,
