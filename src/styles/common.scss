@@ -5,7 +5,6 @@
 $workshop-success: material.mat-palette(material.$mat-green);
 $workshop-info: material.mat-palette(material.$mat-blue);
 
-
 @function apply-extra-colors($theme) {
     @return map.deep-merge(
         $theme,
@@ -20,6 +19,11 @@ $workshop-info: material.mat-palette(material.$mat-blue);
     );
 }
 
+@mixin apply-component-header-color($workshop-primary) {
+    .component-header {
+        background-color: $workshop-primary;
+    }
+}
 
 @mixin create-theme($workshop-theme) {
     @include material.angular-material-theme($workshop-theme);
@@ -38,4 +42,3 @@ $workshop-info: material.mat-palette(material.$mat-blue);
     // @include banner.app-banner-theme($workshop-theme);
     // @include root.app-root-theme($workshop-theme);
 }
-

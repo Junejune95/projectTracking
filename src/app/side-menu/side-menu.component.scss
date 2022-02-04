@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 .sidenav__container {
   height: 100%;
@@ -8,16 +8,24 @@
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
-  background: inherit;
-}
+
+
+ */
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
-} */
+}
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+.mat-drawer-container {
+  height: 100vh;
+  z-index: 0;
 }
