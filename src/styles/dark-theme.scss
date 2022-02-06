@@ -2,8 +2,8 @@
 @use "./common.scss";
 
 $workshop-primary: material.mat-palette(material.$mat-purple,A200, A400);
-$workshop-accent: material.mat-palette(material.$mat-pink, A200, A400);
-$workshop-wran: material.mat-palette(material.$mat-amber,A200);
+$workshop-accent: material.mat-palette(material.$mat-amber, A200, A400);
+$workshop-wran: material.mat-palette(material.$mat-pink,A200);
 
 $workshop-theme: material.mat-dark-theme(
     (

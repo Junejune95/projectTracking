@@ -2,7 +2,7 @@
 @use "./common.scss";
 
 $workshop-primary: material.mat-palette(material.$mat-purple, 700, 200, 700);
-$workshop-accent: material.mat-palette(material.$mat-pink, 300, 200);
+$workshop-accent: material.mat-palette(material.$mat-amber, 300, 200);
 
 $workshop-theme: material.mat-light-theme(
     (
