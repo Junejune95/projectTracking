@@ -13,7 +13,7 @@ $workshop-theme: material.mat-dark-theme(
             warn: $workshop-wran,
             disable: $workshop-accent,
         ),
-        // typography: common.$workshop-typography,
+        typography: common.$typography,
     )
 );
 

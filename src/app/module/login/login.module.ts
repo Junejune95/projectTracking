@@ -24,8 +24,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
+    ReactiveFormsModule,
     LoginMaterialModule,
-    ReactiveFormsModule
+   
   ]
 })
 export class LoginModule { }

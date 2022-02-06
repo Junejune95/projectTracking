@@ -5,6 +5,10 @@
 $workshop-success: material.mat-palette(material.$mat-green);
 $workshop-info: material.mat-palette(material.$mat-blue);
 
+$typography: material.mat-typography-config(
+  $input: material.mat-typography-level(20px, 1.125, 400),
+);
+
 @function apply-extra-colors($theme) {
     @return map.deep-merge(
         $theme,
@@ -27,7 +31,6 @@ $workshop-info: material.mat-palette(material.$mat-blue);
 
 @mixin create-theme($workshop-theme) {
     @include material.angular-material-theme($workshop-theme);
-
     // @include material.mat-core-theme($workshop-theme);
     // @include material.mat-select-theme($workshop-theme);
     // @include material.mat-sidenav-theme($workshop-theme);
@@ -41,4 +44,10 @@ $workshop-info: material.mat-palette(material.$mat-blue);
     // @include angular-material-theme($my-custom-theme);
     // @include banner.app-banner-theme($workshop-theme);
     // @include root.app-root-theme($workshop-theme);
+}
+
+
+.custom__form--field{
+    width: 70%;
+    font-size: 16px !important;
 }
