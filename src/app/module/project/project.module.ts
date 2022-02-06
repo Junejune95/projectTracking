@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
 import { ProjectCreateComponent } from './project-create/project-create.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule
   ]

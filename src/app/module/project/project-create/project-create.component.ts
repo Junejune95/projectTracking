@@ -7,10 +7,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./project-create.component.scss']
 })
 export class ProjectCreateComponent implements OnInit {
+
+  
+  secondFormGroup: FormGroup=this.formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+
   projectForm: FormGroup = this.formBuilder.group({
-    name: ["", [Validators.required, Validators.email]],
+    name: ["", [Validators.required]],
     startDate: ["", [Validators.required]],
     targetEndDate: ["", [Validators.required]],
+    budget: [0, [Validators.required]],
+    note: [""],
   });
 
   constructor(private formBuilder: FormBuilder) { }
