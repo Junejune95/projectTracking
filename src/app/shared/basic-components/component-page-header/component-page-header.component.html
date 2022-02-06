@@ -1,3 +1,15 @@
 <mat-toolbar color="primary">
-    <span>{{componentName}}</span>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;" fxLayout.xs="column">
+        <mat-form-field>
+            <span matPrefix> </span>
+            <input type="tel" matInput placeholder="Search" name="search">
+            <button matSuffix mat-button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button color="accent">
+            Create
+            <mat-icon>control_point</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>

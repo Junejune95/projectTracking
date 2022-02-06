@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentPageHeaderComponent } from './component-page-header/component-page-header.component';
+import { BasicComponentsMaterialModule } from './basic-components-material.module';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
   declarations: [
-    ComponentPageHeaderComponent
+    ComponentPageHeaderComponent,
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
+    BasicComponentsMaterialModule
   ],
   exports:[
     ComponentPageHeaderComponent
