@@ -12,17 +12,24 @@ import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
+import { ProjectCreateComponent } from './project-create/project-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
     component: ProjectComponent,
+  },
+  {
+    path:'create',
+    component:ProjectCreateComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    ProjectComponent
+    ProjectComponent,
+    ProjectCreateComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +40,9 @@ const routes: Routes = [
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProjectModule { }

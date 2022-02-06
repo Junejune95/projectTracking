@@ -1,0 +1,24 @@
+<form [formGroup]="projectForm">
+    <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
+        <mat-form-field class="custom__form--field">
+            <input matInput placeholder="Project Name" type="text" formControlName="name" name="name" required>
+            <mat-error>
+                Please provide a project name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom__form--field">
+            <input matInput placeholder="Start Date" type="date" formControlName="startDate" name="startDate" required>
+            <mat-error>
+                Please provide a project name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom__form--field">
+            <input matInput placeholder="Target End Date" type="date" formControlName="targetEndDate" name="endDate" required>
+            <mat-error>
+                Please provide a target end date
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+
+    </div>
+</form>
