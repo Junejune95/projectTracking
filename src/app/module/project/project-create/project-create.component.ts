@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-project-create',
@@ -8,10 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ProjectCreateComponent implements OnInit {
 
-  
-  secondFormGroup: FormGroup=this.formBuilder.group({
-    secondCtrl: ['', Validators.required],
+  mainFeatureForm:FormGroup=this.formBuilder.group({
+    features: this.formBuilder.array([])
   });
+
+
 
   projectForm: FormGroup = this.formBuilder.group({
     name: ["", [Validators.required]],
@@ -26,4 +27,8 @@ export class ProjectCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+
+
+
+
+} 

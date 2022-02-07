@@ -11,10 +11,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BasicInfoFormComponent } from './basic-info-form/basic-info-form.component';
+import { FeatureFormComponent } from './feature-form/feature-form.component';
 
 const routes: Routes = [
   {
@@ -30,7 +33,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectComponent,
-    ProjectCreateComponent
+    ProjectCreateComponent,
+    BasicInfoFormComponent,
+    FeatureFormComponent
   ],
   imports: [
     CommonModule,
@@ -43,6 +48,7 @@ const routes: Routes = [
     MatButtonModule,
     FlexLayoutModule,
     MatStepperModule,
+    MatTreeModule,
     FormsModule,
     ReactiveFormsModule
   ]

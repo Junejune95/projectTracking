@@ -1,0 +1,42 @@
+
+<form [formGroup]="mainFeatureForm">
+    <ng-template matStepLabel>Fill out your feature</ng-template>
+    <ng-container formArrayName="features">
+        <ng-container *ngFor="let mainForm of features.controls; let i = index">
+            <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;" [formGroup]="mainForm">
+                <mat-form-field class="custom__form--field">
+                    <input matInput placeholder="Feature name" type="text" formControlName="name" name="featurename"
+                        required>
+                    <mat-error>
+                        Please provide a feature name
+                    </mat-error>
+                </mat-form-field>
+                <h3>Add Features Detail:</h3>
+                <div class="add-lessons-form" formArrayName="subFeatures">
+                    <ng-container *ngFor="let dform of subFeatures.controls; let i = index">
+                        <ng-container [formGroupName]="i">
+                            <div class="lesson-form-row" [formGroup]="dform">
+                                <mat-form-field class="custom__form--field">
+                                    <input matInput formControlName="detail" placeholder="Feature Detail">
+                                </mat-form-field>
+    
+                                <mat-icon class="delete-btn" (click)="deleteLesson(i)">
+                                    delete_forever</mat-icon>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <button mat-mini-fab (click)="addSubFeature()">
+                        <mat-icon class="add-course-btn">add</mat-icon>
+                    </button>
+    
+                </div>
+
+            </div>
+        </ng-container>
+    </ng-container>
+                  <button mat-mini-fab (click)="addMainFeature()">
+                    <mat-icon class="add-course-btn">add</mat-icon>
+                </button>
+                <button mat-raised-button color="accent" matStepperNext>Next</button>
+
+</form>
