@@ -30,31 +30,40 @@ export class FeatureFormComponent implements OnInit {
   }
 
 
-  get features() {
-    return this.mainFeatureForm.controls["features"] as FormArray;
+
+  features(): FormArray {
+    return this.mainFeatureForm.get("features") as FormArray
   }
 
-  get subFeatures() {
-    return this.subFeaturesForm.controls["subFeatures"] as FormArray;
+  subFeatures(featureIndex:number) : FormArray {
+    return this.features().at(featureIndex).get("subFeatures") as FormArray
   }
 
-  addSubFeature() {
-    const subFeatures = this.formBuilder.group({
+
+  newSubFeature(): FormGroup {
+    return this.formBuilder.group({
       detail: ['', Validators.required],
     });
-    this.subFeatures.push(subFeatures);
-    console.log(this.mainFeatureForm.value)
   }
 
+  addSubFeature(mainIndex:number) {
+    this.subFeatures(mainIndex).push(this.newSubFeature());
+    console.log(mainIndex)
+  }
+
+ 
+
   addMainFeature() {
+    let sub=this.formBuilder.group({
+      name: ['', Validators.required],
+      subFeatures: this.formBuilder.array([])
+    });
   
-
-    this.features.push(this.subFeaturesForm);
-
+    this.features().push(sub);
   }
 
 
   deleteLesson(lessonIndex: number) {
-    this.subFeatures.removeAt(lessonIndex);
+    // this.subFeatures.removeAt(lessonIndex);
   }
 }

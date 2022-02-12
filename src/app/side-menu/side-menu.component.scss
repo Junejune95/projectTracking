@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 
+
 .sidenav__container {
   height: 100%;
 }
@@ -23,9 +24,10 @@
   background: inherit;
 }
 .mat-drawer-container {
-  height: 100vh;
   z-index: 0;
-
+  overflow: hidden;
 }
-
+.mat-drawer-content{
+  overflow: hidden;
+}
 
