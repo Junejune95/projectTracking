@@ -8,7 +8,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./feature-form.component.scss']
 })
 export class FeatureFormComponent implements OnInit {
-   subFeaturesForm = this.formBuilder.group({
+  subFeaturesForm = this.formBuilder.group({
     name: ['', Validators.required],
     subFeatures: this.formBuilder.array([])
   });
@@ -26,7 +26,6 @@ export class FeatureFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.addMainFeature();
-
   }
 
 
@@ -35,7 +34,7 @@ export class FeatureFormComponent implements OnInit {
     return this.mainFeatureForm.get("features") as FormArray
   }
 
-  subFeatures(featureIndex:number) : FormArray {
+  subFeatures(featureIndex: number): FormArray {
     return this.features().at(featureIndex).get("subFeatures") as FormArray
   }
 
@@ -46,24 +45,32 @@ export class FeatureFormComponent implements OnInit {
     });
   }
 
-  addSubFeature(mainIndex:number) {
+  newMainFeature(): FormGroup {
+    return this.formBuilder.group({
+      name: ['', Validators.required],
+      subFeatures: this.formBuilder.array([
+        // this.newSubFeature()
+      ])
+    });
+  }
+
+  addMainFeature() {
+
+    this.features().push(this.newMainFeature());
+  }
+
+  addSubFeature(mainIndex: number) {
     this.subFeatures(mainIndex).push(this.newSubFeature());
     console.log(mainIndex)
   }
 
- 
 
-  addMainFeature() {
-    let sub=this.formBuilder.group({
-      name: ['', Validators.required],
-      subFeatures: this.formBuilder.array([])
-    });
-  
-    this.features().push(sub);
+  deleteSubFeature(mainIndex: number, subIndex: number) {
+    this.subFeatures(mainIndex).removeAt(subIndex);
   }
 
-
-  deleteLesson(lessonIndex: number) {
-    // this.subFeatures.removeAt(lessonIndex);
+  deleteMainFeauture(index: number) {
+    this.features().removeAt(index);
   }
+
 }

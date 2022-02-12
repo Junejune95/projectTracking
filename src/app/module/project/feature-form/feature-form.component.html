@@ -1,8 +1,13 @@
 <form [formGroup]="mainFeatureForm">
-    <ng-template matStepLabel>Fill out your feature</ng-template>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <p class="title">Feature List</p>
+        <button mat-mini-fab (click)="addMainFeature()" class="mini__add--btn">
+            <mat-icon class="add-course-btn">add</mat-icon>
+        </button>
+    </div>
     <ng-container formArrayName="features">
-        <ng-container *ngFor="let mainForm of features().controls; let i = index">
-            <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;" [formGroup]="mainForm">
+        <ng-container *ngFor="let mainForm of features().controls; let mainIndex = index">
+            <div fxLayout="column" fxLayoutAlign="center center" class="feature__wrapper" [formGroup]="mainForm">
                 <div fxLayout="row" style="width: 80%;">
                     <mat-form-field class="custom__form--field">
                         <input matInput placeholder="Feature name" type="text" formControlName="name" name="featurename"
@@ -11,35 +16,41 @@
                             Please provide a feature name
                         </mat-error>
                     </mat-form-field>
-                    <button mat-mini-fab (click)="addMainFeature()">
-                        <mat-icon class="add-course-btn">add</mat-icon>
-                    </button>
+                    <mat-icon class="delete-btn" (click)="deleteMainFeauture(mainIndex)" color="warn">
+                        delete_forever</mat-icon>
                 </div>
 
-                <h3>Add Features Detail:</h3>
+
                 <div class="add-lessons-form" formArrayName="subFeatures" style="width: 60%;">
-                    <ng-container *ngFor="let dform of subFeatures(i).controls; let x = index">
-                        <ng-container [formGroupName]="i">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <p class="sub__title">Feature List</p>
+                        <button mat-mini-fab (click)="addSubFeature(mainIndex)" class="mini__add--btn">
+                            <mat-icon class="add-course-btn">add</mat-icon>
+                        </button>
+                    </div>
+
+                    <ng-container *ngFor="let dform of subFeatures(mainIndex).controls; let subIndex = index">
+                        <ng-container [formGroupName]="mainIndex">
                             <div class="lesson-form-row" [formGroup]="dform">
                                 <mat-form-field class="custom__form--field">
                                     <input matInput formControlName="detail" placeholder="Feature Detail">
+                                    <mat-error>
+                                        Please provide a feature detail
+                                    </mat-error>
                                 </mat-form-field>
 
-                                <mat-icon class="delete-btn" (click)="deleteLesson(i)" color="warn">
+                                <mat-icon class="delete-btn" (click)="deleteSubFeature(mainIndex,subIndex)" color="warn">
                                     delete_forever</mat-icon>
                             </div>
                         </ng-container>
                     </ng-container>
-                    <button mat-mini-fab (click)="addSubFeature(i)">
-                        <mat-icon class="add-course-btn">add</mat-icon>
-                    </button>
-                    <mat-divider></mat-divider>
+
                 </div>
 
             </div>
             <mat-divider></mat-divider>
         </ng-container>
-        <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="center center" style="padding-top: 20px;">
             <button mat-raised-button color="accent" matStepperNext>Next</button>
         </div>
     </ng-container>
