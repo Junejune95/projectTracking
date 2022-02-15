@@ -12,7 +12,9 @@ export class ProjectCreateComponent implements OnInit {
     features: this.formBuilder.array([])
   });
 
-
+  phaseForm:FormGroup=this.formBuilder.group({
+    phases: this.formBuilder.array([])
+  });
 
   projectForm: FormGroup = this.formBuilder.group({
     name: ["", [Validators.required]],
@@ -22,9 +24,16 @@ export class ProjectCreateComponent implements OnInit {
     note: [""],
   });
 
+  public featureList:any=[];
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  saveFeature(){
+    console.log('here save feature',this.mainFeatureForm.value);
+    this.featureList=this.mainFeatureForm.value;
   }
 
 

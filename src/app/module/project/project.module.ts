@@ -13,12 +13,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicInfoFormComponent } from './basic-info-form/basic-info-form.component';
 import { FeatureFormComponent } from './feature-form/feature-form.component';
+import { PhaseFormComponent } from './phase-form/phase-form.component';
 
 const routes: Routes = [
   {
@@ -36,7 +38,8 @@ const routes: Routes = [
     ProjectComponent,
     ProjectCreateComponent,
     BasicInfoFormComponent,
-    FeatureFormComponent
+    FeatureFormComponent,
+    PhaseFormComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +55,8 @@ const routes: Routes = [
     MatDividerModule,
     MatListModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ]
 })
 export class ProjectModule { }

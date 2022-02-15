@@ -1,13 +1,18 @@
 <mat-stepper #stepper>
     <mat-step [stepControl]="projectForm" errorMessage="basic info is required.">
+        <ng-template matStepLabel>Fill out project basic info</ng-template>
         <app-basic-info-form [basicInfoForm]="projectForm"></app-basic-info-form>
     </mat-step>
     <mat-step [stepControl]="mainFeatureForm" errorMessage="Address is required.">
-            <app-feature-form [mainFeatureForm]="mainFeatureForm"></app-feature-form>
+        <ng-template matStepLabel>Fill out feautres</ng-template>
+        <app-feature-form [mainFeatureForm]="mainFeatureForm"></app-feature-form>
+        <div fxLayout="column" fxLayoutAlign="center center" style="padding-top: 20px;">
+            <button mat-raised-button color="accent" matStepperNext (click)="saveFeature()">Next</button>
+        </div>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <ng-template matStepLabel>Divide Phase</ng-template>
+        <app-phase-form [phaseForm]="phaseForm" [featureList]="featureList"></app-phase-form>
         <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="stepper.reset()">Reset</button>

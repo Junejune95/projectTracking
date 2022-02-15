@@ -55,7 +55,6 @@ export class FeatureFormComponent implements OnInit {
   }
 
   addMainFeature() {
-
     this.features().push(this.newMainFeature());
   }
 

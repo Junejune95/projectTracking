@@ -1,6 +1,6 @@
 <form [formGroup]="mainFeatureForm">
     <div fxLayout="row" fxLayoutAlign="start center">
-        <p class="title">Feature List</p>
+        <p class="mat-headline">Feature List</p>
         <button mat-mini-fab (click)="addMainFeature()" class="mini__add--btn">
             <mat-icon class="add-course-btn">add</mat-icon>
         </button>
@@ -23,7 +23,7 @@
 
                 <div class="add-lessons-form" formArrayName="subFeatures" style="width: 60%;">
                     <div fxLayout="row" fxLayoutAlign="start center">
-                        <p class="sub__title">Feature List</p>
+                        <p class="mat-title">Feature List</p>
                         <button mat-mini-fab (click)="addSubFeature(mainIndex)" class="mini__add--btn">
                             <mat-icon class="add-course-btn">add</mat-icon>
                         </button>
@@ -50,8 +50,6 @@
             </div>
             <mat-divider></mat-divider>
         </ng-container>
-        <div fxLayout="column" fxLayoutAlign="center center" style="padding-top: 20px;">
-            <button mat-raised-button color="accent" matStepperNext>Next</button>
-        </div>
+    
     </ng-container>
 </form>
