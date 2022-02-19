@@ -21,6 +21,7 @@ export class ProjectCreateComponent implements OnInit {
     startDate: ["", [Validators.required]],
     targetEndDate: ["", [Validators.required]],
     budget: [0, [Validators.required]],
+    status: ["", [Validators.required]],
     note: [""],
   });
 

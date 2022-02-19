@@ -2,3 +2,13 @@ mat-expansion-panel{
     margin-bottom: 10px;
 }
 
+mat-progress-bar{
+    height: 10px;
+    margin-right: 10px;
+}
+
+p.project__link {
+    margin-bottom: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}

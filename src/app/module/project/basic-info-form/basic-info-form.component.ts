@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./basic-info-form.component.scss']
 })
 export class BasicInfoFormComponent implements OnInit {
-
+  public statusList=["Init","Re-design","Bug Fix","New Version"]
   @Input() basicInfoForm: FormGroup | undefined;
 
   constructor(private ref: ChangeDetectorRef) { }

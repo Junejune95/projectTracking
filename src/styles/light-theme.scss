@@ -16,21 +16,17 @@ $workshop-theme: material.mat-light-theme(
     )
 );
 
+
+
 $workshop-theme: common.apply-extra-colors($workshop-theme);
+// $workshop-theme: common.theme-color-grabber($workshop-primary);
 
 //Generate theme
+
+@include common.theme-color-grabber($workshop-primary);
 @include common.create-theme($workshop-theme);
 
-// $my-custom-primary: material.mat-palette(material.$mat-purple, 700, 200, 700);
-// $my-custom-accent: material.mat-palette(material.$mat-pink, 300, 200);
-// $my-custom-warn: material.mat-palette(material.$mat-lime);
 
-// // Dark theme
-// $my-custom-theme: material.mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
-
-// // Main theme defination
-
-// @include material.angular-material-theme($my-custom-theme);
 .active {
     background-color: #7b1fa226;
 }

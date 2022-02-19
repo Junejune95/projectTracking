@@ -6,7 +6,7 @@ $workshop-success: material.mat-palette(material.$mat-green);
 $workshop-info: material.mat-palette(material.$mat-blue);
 
 $typography: material.mat-typography-config(
-  $input: material.mat-typography-level(20px, 1.125, 400),
+    $input: material.mat-typography-level(20px, 1.125, 400),
 );
 
 @function apply-extra-colors($theme) {
@@ -29,8 +29,30 @@ $typography: material.mat-typography-config(
     }
 }
 
+// Define a custom mixin that takes in the current theme
+@mixin theme-color-grabber($theme) {
+    // Parse the theme and create variables for each color in the pallete
+    // $primary: map-get($theme, primary);
+    // $accent: material.map-get($theme, 'accent');
+    // $warn: material.map-get($theme, 'warn');
+    // Create theme specfic styles
+    // .primary__bg--color {
+    //   background-color: #7b1fa2;
+    // }
+
+    // .accentColorBG {
+    //   background-color: mat-color($accent);
+    // }
+    // .warnColorBG {
+    //   background-color: mat-color($warn);
+    // }
+  }
+
+
+
 @mixin create-theme($workshop-theme) {
     @include material.angular-material-theme($workshop-theme);
+    // @include theme-color-grabber($workshop-theme);
     // @include material.mat-core-theme($workshop-theme);
     // @include material.mat-select-theme($workshop-theme);
     // @include material.mat-sidenav-theme($workshop-theme);
@@ -46,8 +68,7 @@ $typography: material.mat-typography-config(
     // @include root.app-root-theme($workshop-theme);
 }
 
-
-.custom__form--field{
+.custom__form--field {
     width: 70%;
     font-size: 16px !important;
     padding: 10px;

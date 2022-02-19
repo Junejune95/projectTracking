@@ -8,15 +8,14 @@
             </mat-error>
         </mat-form-field>
         <mat-form-field class="custom__form--field">
-            <input matInput placeholder="Start Date" type="date" formControlName="startDate" name="startDate"
-                required>
+            <input matInput placeholder="Start Date" type="date" formControlName="startDate" name="startDate" required>
             <mat-error>
                 Please provide a project name
             </mat-error>
         </mat-form-field>
         <mat-form-field class="custom__form--field">
-            <input matInput placeholder="Target End Date" type="date" formControlName="targetEndDate"
-                name="endDate" required>
+            <input matInput placeholder="Target End Date" type="date" formControlName="targetEndDate" name="endDate"
+                required>
             <mat-error>
                 Please provide a target end date
             </mat-error>
@@ -27,11 +26,17 @@
                 Please provide a target end date
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="custom__form--field">
-            <textarea matInput placeholder="Note" type="text" formControlName="note" name="note"
-                rows="5"></textarea>
-
+        <mat-form-field style="width: 70%;">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option *ngFor="let status of statusList" [value]="status">{{status}}</mat-option>
+            </mat-select>
         </mat-form-field>
+        <mat-form-field class="custom__form--field">
+            <textarea matInput placeholder="Note" type="text" formControlName="note" name="note" rows="5"></textarea>
+        </mat-form-field>
+      
+
         <button mat-raised-button color="accent" matStepperNext>Next</button>
 
     </div>

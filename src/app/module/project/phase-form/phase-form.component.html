@@ -9,7 +9,7 @@
     </div>
     <div fxLayout="row">
         <div fxLayout="column" fxLayoutAlign="center center" class="phase__wrapper">
-          
+
             <ng-container formArrayName="phases">
                 <ng-container *ngFor="let mainForm of phases().controls; let mainIndex = index">
                     <ng-container [formGroup]="mainForm">
@@ -28,15 +28,15 @@
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field class="custom__form--field">
-                            <input matInput placeholder="Development End Date" type="date" formControlName="developmentEndDate"
-                                name="developmentEndDate" required>
+                            <input matInput placeholder="Development End Date" type="date"
+                                formControlName="developmentEndDate" name="developmentEndDate" required>
                             <mat-error>
                                 Please provide a date
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field class="custom__form--field">
-                            <input matInput placeholder="Testing Start Date" type="date" formControlName="testingStartDate"
-                                name="testingStartDate" required>
+                            <input matInput placeholder="Testing Start Date" type="date"
+                                formControlName="testingStartDate" name="testingStartDate" required>
                             <mat-error>
                                 Please provide a date
                             </mat-error>
@@ -64,7 +64,7 @@
                         </mat-form-field>
                         <div class="feature__wrapper">
                             <p class="subheading-2">Feature List</p>
-                            <ul >
+                            <ul>
                                 <li *ngFor="let item of features">
                                     t
                                 </li>
@@ -77,17 +77,14 @@
 
         </div>
         <div fxLayout="column">
-    
-                <ng-container *ngFor="let feature of featureList.features">
-                    <section >
-                    <mat-checkbox >{{feature.name}}</mat-checkbox>
+            <p class="mat-body-2">
+                Select features
+            </p>
+            <ng-container *ngFor="let feature of featureList.features">
+                <section>
+                    <mat-checkbox>{{feature.name}}</mat-checkbox>
                 </section>
-                </ng-container>
-       
-      
-          
+            </ng-container>
         </div>
     </div>
-
-
 </form>
