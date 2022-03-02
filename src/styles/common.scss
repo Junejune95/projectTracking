@@ -29,25 +29,6 @@ $typography: material.mat-typography-config(
     }
 }
 
-// Define a custom mixin that takes in the current theme
-@mixin theme-color-grabber($theme) {
-    // Parse the theme and create variables for each color in the pallete
-    // $primary: map-get($theme, primary);
-    // $accent: material.map-get($theme, 'accent');
-    // $warn: material.map-get($theme, 'warn');
-    // Create theme specfic styles
-    // .primary__bg--color {
-    //   background-color: #7b1fa2;
-    // }
-
-    // .accentColorBG {
-    //   background-color: mat-color($accent);
-    // }
-    // .warnColorBG {
-    //   background-color: mat-color($warn);
-    // }
-  }
-
 
 
 @mixin create-theme($workshop-theme) {

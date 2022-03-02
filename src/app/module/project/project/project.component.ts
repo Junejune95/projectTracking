@@ -19,7 +19,7 @@ export class ProjectComponent implements OnInit {
       startDate: '10/1/2022',
       targetEndDate: '10/8/2022',
       budget: 123324234,
-      status: 'Init',
+      level: 'Init',
       progress:20,
       currentVersion:'version1.1',
       
@@ -30,7 +30,7 @@ export class ProjectComponent implements OnInit {
       startDate: '10/1/2022',
       targetEndDate: '10/8/2022',
       budget: 123324234,
-      status: 'Init',
+      level: 'Init',
       progress:80,
       currentVersion:'version1.2',
     },
@@ -40,7 +40,7 @@ export class ProjectComponent implements OnInit {
       startDate: '10/1/2022',
       targetEndDate: '10/8/2022',
       budget: 123324234,
-      status: 'Init',
+      level: 'Init',
       progress:100,
       currentVersion:'version1.2',
     }

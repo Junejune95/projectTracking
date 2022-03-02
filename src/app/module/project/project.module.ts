@@ -12,6 +12,7 @@ import { BasicInfoFormComponent } from './basic-info-form/basic-info-form.compon
 import { FeatureFormComponent } from './feature-form/feature-form.component';
 import { PhaseFormComponent } from './phase-form/phase-form.component';
 import { ProjectMaterial } from './project-material.module';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'create',
     component:ProjectCreateComponent
+  },
+  {
+    path:'detail/:projectId',
+    component:ProjectDetailComponent
   }
 ];
 
@@ -30,7 +35,8 @@ const routes: Routes = [
     ProjectCreateComponent,
     BasicInfoFormComponent,
     FeatureFormComponent,
-    PhaseFormComponent
+    PhaseFormComponent,
+    ProjectDetailComponent
   ],
   imports: [
     CommonModule,

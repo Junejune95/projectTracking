@@ -1,0 +1,66 @@
+<div class="detail__header--wrapper">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <p class="mat-title">
+            {{projectDetail.name}}
+            <span class="mat-body-2">({{projectDetail.level}})</span>
+        </p>
+
+        <div class="detail__pending">
+            {{projectDetail.status}}
+        </div>
+    </div>
+
+
+
+    <div fxLayout="row " fxLayoutAlign="space-between start" class="description__wrapper" fxLayout.xs="column">
+        <div fxLayout="row" fxLayoutAlign="space-between start" style="width: 40%;">
+            <div fxLayout="column"  style="width: 50%;">
+                <label class="mat-body-1">Version</label>
+                <label class="mat-body-2">{{projectDetail.currentVersion}}</label>
+            </div>
+
+            <div fxLayout="column" style="width: 50%;">
+                <label class="mat-body-1">Start Date</label>
+                <label class="mat-body-2">{{projectDetail.startDate}}</label>
+            </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between start" style="width: 40%;">
+            <div fxLayout="column" style="width: 50%;">
+                <label class="mat-body-1">Target End Date</label>
+                <label class="mat-body-2">{{projectDetail.targetEndDate}}</label>
+            </div>
+
+
+            <div fxLayout="column" style="width: 50%;">
+                <label class="mat-body-1">Budget</label>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <label class="mat-body-2">{{projectDetail.budget}}</label>
+                    <button mat-icon-button color="accent">
+                        <mat-icon>remove_red_eye</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div fxLayout="row" style="width: 20%;">
+            <div fxLayout="column" style="width: 100%;">
+                <label class="mat-body-1">Progress</label>
+                <!-- <div fxLayout="row" fxLayoutAlign="center center"> -->
+                <mat-progress-bar [color]="color" [value]="projectDetail.progress">
+                </mat-progress-bar>
+                <span class="mat-body-2">{{projectDetail.progress}}%</span>
+                <!-- </div> -->
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Phases">Content 1</mat-tab>
+    <mat-tab label="Features">Content 2</mat-tab>
+    <mat-tab label="Payment History">Content 2</mat-tab>
+
+</mat-tab-group>

@@ -5,7 +5,7 @@
             <mat-expansion-panel-header>
                 <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
                     <div style="width: 40%;">
-                        <p class="project__link mat-subheading-2">{{project.name}}</p>
+                        <p class="project__link mat-subheading-2" [routerLink]="['detail',project.projectId]">{{project.name}}</p>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="center center" style="width: 30%;">
                         <mat-progress-bar [color]="color" [mode]="determinate" [value]="project.progress">
@@ -13,7 +13,7 @@
                         <span class="mat-body-2">{{project.progress}}%</span>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="center center" style="width: 30%;">
-                        <div class="project__status--badge" [class]="project.status.toLowerCase()">
+                        <div class="project__status--badge primary__bg--color">
                             {{project.status}}
                         </div>
                     </div>

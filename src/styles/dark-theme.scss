@@ -1,10 +1,12 @@
 @use "~@angular/material/theming" as material;
 @use "./common.scss";
+// @include material.mat-core();
 
-
-$workshop-primary: material.mat-palette(material.$mat-purple,A200, A400);
+$workshop-primary: material.mat-palette(material.$mat-purple,400);
 $workshop-accent: material.mat-palette(material.$mat-amber, A200, A400);
 $workshop-wran: material.mat-palette(material.$mat-pink,A200);
+
+// --primary-color: mat-color($workshop-primary);
 
 $workshop-theme: material.mat-dark-theme(
     (
@@ -15,16 +17,22 @@ $workshop-theme: material.mat-dark-theme(
             disable: $workshop-accent,
         ),
         typography: common.$typography,
+        
     )
+    
 );
 
+:root{
+    --primary:#ab47bc;
+    --accent:#ffd740;
+    --text:#ffffffd1;
+}
 
   
 $workshop-theme: common.apply-extra-colors($workshop-theme);
 
 
 //Generate theme
-@include common.theme-color-grabber($workshop-primary);
 
 @include common.create-theme($workshop-theme);
 // @include common.apply-component-header-color($workshop-primary);
@@ -45,3 +53,6 @@ $workshop-theme: common.apply-extra-colors($workshop-theme);
     background-color: #00000030;
 }
 
+.accent__bg--color {
+    background-color: #ffd740;
+}

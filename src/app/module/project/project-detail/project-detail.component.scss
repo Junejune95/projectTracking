@@ -1,0 +1,22 @@
+label,p,span{
+    color: var(--text);
+}
+
+p{
+    margin-bottom: 0;
+}
+.detail__header--wrapper{
+    background-color: var(--primary);
+    padding: 20px;
+}
+
+.detail__pending{
+    background-color: var(--accent);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-weight: 500;
+}
+
+.description__wrapper {
+    padding-top: 20px;
+}
