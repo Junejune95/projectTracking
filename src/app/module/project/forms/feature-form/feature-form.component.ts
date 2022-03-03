@@ -41,13 +41,14 @@ export class FeatureFormComponent implements OnInit {
 
   newSubFeature(): FormGroup {
     return this.formBuilder.group({
-      detail: ['', Validators.required],
+      name: ['', Validators.required],
     });
   }
 
   newMainFeature(): FormGroup {
     return this.formBuilder.group({
       name: ['', Validators.required],
+      note: [''],
       subFeatures: this.formBuilder.array([
         // this.newSubFeature()
       ])

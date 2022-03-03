@@ -35,3 +35,13 @@ export interface Phase {
     features?:Array<string>;
     status?: 'None' | 'Pending' | 'Testing' | 'Bug Fix' | 'Release';
 }
+
+export interface Feature {
+    featureId: string;
+    name: string;
+    subFeatures: Array<SubFeature>;
+}
+
+export interface SubFeature{
+    detail:string;
+}

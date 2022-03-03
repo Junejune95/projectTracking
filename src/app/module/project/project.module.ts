@@ -8,11 +8,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BasicInfoFormComponent } from './basic-info-form/basic-info-form.component';
-import { FeatureFormComponent } from './feature-form/feature-form.component';
-import { PhaseFormComponent } from './phase-form/phase-form.component';
+import { BasicInfoFormComponent } from './forms/basic-info-form/basic-info-form.component';
+import { FeatureFormComponent } from './forms/feature-form/feature-form.component';
+import { PhaseFormComponent } from './forms/phase-form/phase-form.component';
 import { ProjectMaterial } from './project-material.module';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { FeatureDetailComponent } from './details/feature-detail/feature-detail.component';
+import { PhaseDetailComponent } from './details/phase-detail/phase-detail.component';
+import { PaymentDetailComponent } from './details/payment-detail/payment-detail.component';
 
 const routes: Routes = [
   {
@@ -36,7 +39,10 @@ const routes: Routes = [
     BasicInfoFormComponent,
     FeatureFormComponent,
     PhaseFormComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    FeatureDetailComponent,
+    PhaseDetailComponent,
+    PaymentDetailComponent
   ],
   imports: [
     CommonModule,

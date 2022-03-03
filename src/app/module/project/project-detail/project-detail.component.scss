@@ -1,16 +1,18 @@
-label,p,span{
+label,
+p,
+span {
     color: var(--text);
 }
 
-p{
+p {
     margin-bottom: 0;
 }
-.detail__header--wrapper{
+.detail__header--wrapper {
     background-color: var(--primary);
     padding: 20px;
 }
 
-.detail__pending{
+.detail__pending {
     background-color: var(--accent);
     border-radius: 8px;
     padding: 6px 10px;
@@ -19,4 +21,20 @@ p{
 
 .description__wrapper {
     padding-top: 20px;
+}
+
+.decription__row {
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.decription__row--mini {
+    width: 20%;
+    margin-bottom: 20px;
+}
+@media screen and (min-width: 480px) {
+    .decription__row,
+    .decription__row--mini {
+        width: 100%;
+    }
 }
