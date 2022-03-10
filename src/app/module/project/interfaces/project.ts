@@ -37,11 +37,13 @@ export interface Phase {
 }
 
 export interface Feature {
-    featureId: string;
     name: string;
+    note?:string;
+    status:'None' | 'Pending' | 'Testing' | 'BugFix' | 'Done' ;
     subFeatures: Array<SubFeature>;
 }
 
 export interface SubFeature{
-    detail:string;
+    name:string;
+    status:'None' | 'Pending' | 'Testing' | 'BugFix' | 'Done';
 }

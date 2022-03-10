@@ -1,0 +1,33 @@
+mat-expansion-panel-header{
+    height: 100px;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+    height: 90px;
+}
+
+.done {
+    color: var(--success);
+}
+
+.testing,.bugfix {
+    color: var(--danger);
+}
+
+.pending{
+    color: var(--warn);
+}
+
+
+
+.status__box{
+    background-color: var(--accent);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-weight: 500;
+    font-size: 12px;
+    height: 18px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}

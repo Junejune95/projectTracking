@@ -1,1 +1,44 @@
-<p>feature-detail works!</p>
+<mat-accordion>
+    <ng-container *ngFor="let feautre of feautres">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <div fxLayout="column" style="width: 100%;">
+                    <div fxLayout="row" >
+                        <p class="mat-body-2">
+                            {{feautre.name}}
+                        </p>
+
+                        <div class="status__box">
+                            {{feautre.status}}
+                        </div>
+                    </div>
+                  
+                    <p class="mat-body-1" style="opacity: 0.7;">
+                        {{feautre.note}}
+                    </p>
+                </div>
+            </mat-expansion-panel-header>
+
+            <div fxLayout="column">
+                <p class="mat-body-strong">Sub-features</p>
+                <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let sub of feautre.subFeatures">
+                    <button mat-icon-button [class]="sub.status.toLowerCase()"
+                    [matTooltip]="sub.status"
+                    [matTooltipPosition]="'above'"
+                    matTooltipHideDelay="10">
+                        <mat-icon *ngIf="sub.status=='Done'">check_circle</mat-icon>
+                        <mat-icon *ngIf="sub.status=='None'">radio_button_unchecked</mat-icon>
+                        <mat-icon *ngIf="sub.status=='Pending'">timelapse</mat-icon>
+                        <mat-icon *ngIf="sub.status=='Testing'">remove_red_eye</mat-icon>
+                        <mat-icon *ngIf="sub.status=='BugFix'">rotate_left</mat-icon>
+                    </button>
+                    <span>{{sub.name}}</span>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+
+    </ng-container>
+
+
+</mat-accordion>

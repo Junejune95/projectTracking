@@ -10,6 +10,7 @@ $workshop-theme: material.mat-light-theme(
             primary: $workshop-primary,
             accent: $workshop-accent,
             warn: material.mat-palette(material.$mat-red),
+            // success: material.mat-palette(material.$mat-green),
         ),
         typography: common.$typography,
         // density: minimum,
@@ -20,6 +21,9 @@ $workshop-theme: material.mat-light-theme(
     --primary:#9c27b0;
     --accent:#ffd54f;
     --text:#ffffffd1;
+    --success:green;
+    --danger:red;
+    --warn:#eeb200;
 }
 
 // Define a custom mixin that takes in the current theme
