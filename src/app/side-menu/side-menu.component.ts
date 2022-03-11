@@ -26,7 +26,7 @@ export class SideMenuComponent implements OnInit {
 
   }
 
-  public currentRouteName: 'Task Management' | 'Project Management' | 'Home' | undefined;
+  public currentRouteName!: 'Task Management' | 'Project Management' | 'Home' | 'User';
   ngOnInit(): void {
 
     let theme = localStorage.getItem('custom-theme');
@@ -43,6 +43,7 @@ export class SideMenuComponent implements OnInit {
       if (name == 'task') this.currentRouteName = 'Task Management';
       else if (name == 'project') this.currentRouteName = 'Project Management';
       else if (name == 'home') this.currentRouteName = 'Home';
+      else if (name == 'user') this.currentRouteName = 'User';
     }, 200);
 
   }

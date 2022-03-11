@@ -24,6 +24,7 @@ $workshop-theme: material.mat-light-theme(
     --success:green;
     --danger:red;
     --warn:#eeb200;
+    --label:rgba(0, 0, 0, 0.54);
 }
 
 // Define a custom mixin that takes in the current theme

@@ -18,9 +18,14 @@
         <h4 mat-line *ngIf="isExpanded">Task</h4>
       </mat-list-item>
       <mat-list-item>
+        <mat-icon mat-list-icon color="primary" [routerLink]="'user'" routerLinkActive="active">person</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">User</h4>
+      </mat-list-item>
+      <mat-list-item>
         <mat-icon mat-list-icon color="primary">settings</mat-icon>
         <h4 mat-line *ngIf="isExpanded">Setting</h4>
       </mat-list-item>
+
     </mat-nav-list>
   </mat-drawer>
 

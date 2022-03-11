@@ -16,7 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
 
   exports: [
@@ -33,7 +34,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSelectModule,
     MatProgressBarModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableModule,
+    MatPaginatorModule
  
   ]
 })
