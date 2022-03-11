@@ -49,6 +49,7 @@ export class FeatureFormComponent implements OnInit {
     return this.formBuilder.group({
       name: ['', Validators.required],
       note: [''],
+      duration: [1,Validators.required],
       subFeatures: this.formBuilder.array([
         // this.newSubFeature()
       ])

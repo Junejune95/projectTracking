@@ -20,13 +20,18 @@
                         <mat-icon class="delete-btn" (click)="deleteMainFeauture(mainIndex)" color="warn">
                             delete_forever</mat-icon>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;">
-                        <mat-form-field class="custom__form--field">
-                            <textarea matInput placeholder="Note" type="text" formControlName="note" name="note"
-                                rows="5"></textarea>
-                        </mat-form-field>
-
-                    </div>
+                    <mat-form-field class="custom__form--field">
+                        <input matInput type="number" formControlName="duration" placeholder="Duration per day" required>
+                        <mat-error>
+                            Please provide duration
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="custom__form--field">
+                        <textarea matInput placeholder="Note" type="text" formControlName="note" name="note"
+                            rows="5"></textarea>
+                    </mat-form-field>
+                    
+            
 
                     <div class="add-lessons-form" fxLayout="column" fxLayoutAlign="center center" formArrayName="subFeatures" style="width: 80%;">
                         <div fxLayout="row" fxLayoutAlign="start center" style="width: 80%;">
