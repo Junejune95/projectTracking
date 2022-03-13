@@ -1,6 +1,7 @@
 <app-component-page-header></app-component-page-header>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+matSort matSortActive="username" matSortDisableClear matSortDirection="desc">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -29,4 +30,4 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
-  
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="resultsLength" aria-label="Select page of users"></mat-paginator>
