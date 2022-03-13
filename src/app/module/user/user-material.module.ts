@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
 
   exports: [
@@ -16,7 +17,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FlexLayoutModule,
     MatRadioModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
 
   ]
 })
