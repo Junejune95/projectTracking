@@ -8,6 +8,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 
 
 import { SharedMaterialModule } from './shared-material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SharedMaterialModule } from './shared-material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedMaterialModule
+    SharedMaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

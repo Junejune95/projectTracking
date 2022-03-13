@@ -20,6 +20,9 @@
     "esModuleInterop": true,
     "target": "es2017",
     "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
       "es2020",
       "dom"
@@ -27,14 +30,22 @@
   },
   "skipLibCheck": true,
   "paths":{
-    "@modules/*": [
-      "app/module/*"
+    "@app/*": [
+      "app/*",
     ],
+    "@modules/*": [
+      "app/module/*",
+    ],
+    "@basic-components/*":[
+      "app/shared/basic-components/*"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": false
+    "strictTemplates": false,
+    // "fullTemplateTypeCheck": true,
+
   }
 }

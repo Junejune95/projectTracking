@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 
-import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
+
 import { ProjectCreateComponent } from './project-create/project-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicInfoFormComponent } from './forms/basic-info-form/basic-info-form.component';
@@ -16,6 +16,8 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { FeatureDetailComponent } from './details/feature-detail/feature-detail.component';
 import { PhaseDetailComponent } from './details/phase-detail/phase-detail.component';
 import { PaymentDetailComponent } from './details/payment-detail/payment-detail.component';
+
+import { BasicComponentsModule } from 'app/shared/basic-components/basic-components.module';
 
 const routes: Routes = [
   {
