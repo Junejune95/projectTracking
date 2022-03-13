@@ -13,16 +13,10 @@ import { Subscription } from 'rxjs';
 })
 export class UsersComponent implements OnInit {
   resultsLength = 0;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+
   
   displayedColumns: string[] = ['username', 'email', 'phoneNumber'];
-  public tableFilter: TableFilter = {
-    page: 1,
-    limit: 10,
-    sortColumn: 'createdDate',
-    sortDirection: 'desc'
-  }
+  displayedLabel: string[] = ['User Name', 'Email', 'Phone Number'];
 
   public users?: User[];
   public sub?:Subscription;
@@ -31,20 +25,12 @@ export class UsersComponent implements OnInit {
   constructor(private _service: TableListService) { }
 
   ngOnInit(): void {
-  
-
     this.getUserList();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-
-    
-  }
 
   getUserList() {
-    this.sub=this._service.getUserList(this.tableFilter)
+    this.sub=this._service.getUserList('hello')
     .subscribe((res)=>{
       console.log(res);
       this.resultsLength=res.totalCount;

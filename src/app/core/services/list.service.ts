@@ -17,21 +17,14 @@ import { map } from "rxjs";
   
     }
 
-    getUserList(filter: TableFilter) {
+    getUserList(search:string) {
         let url: string;
-        if (filter.search) url = this.baseUrl + "users?search=" + filter.search;
+        if (search) url = this.baseUrl + "users?search=" + 'filter.search';
         else
     
           url =
             this.baseUrl +
-            "users?page=" +
-            filter.page +
-            "&limit=" +
-            filter.limit +
-            "&sortColumn=" +
-            filter.sortColumn +
-            "&sortDirection=" +
-            filter.sortDirection;
+            "users";
     
         return this.http.get<UserList>(url).pipe(map((obj) => obj));
       }
